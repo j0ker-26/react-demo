@@ -1,7 +1,12 @@
 import React, { Component } from 'react'
 import { nanoid } from 'nanoid'
+import PropTypes from 'prop-types'
 
 export default class Header extends Component {
+    static propTyeps = {
+        addTodo: PropTypes.func.isRequired
+    };
+
     handleKeyUp = ({ key, target }) => {
         if (key !== 'Enter') return;
         if (target.value.trim() === '') return void alert('Please type in.');
